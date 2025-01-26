@@ -1,0 +1,288 @@
+<head>
+    <title>PathU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Student Website.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+  </symbol>
+  <symbol id="cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
+  </symbol>
+</svg>
+
+<div class="container">
+  <header class="border-bottom lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="https://www.google.com/maps/place/VIT+COLLEGE+(Kondhwa+Campus)/@18.4614823,73.8394111,13z/data=!4m10!1m2!2m1!1sviit+location!3m6!1s0x3bc2eb1b37dfcadd:0x56b9d4b16085873c!8m2!3d18.4596916!4d73.8843766!15sCg12aWl0IGxvY2F0aW9uWgYiBHZpaXSSAQdjb2xsZWdlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVU5DWDNKdFIxQlJFQUXgAQD6AQQIABAX!16s%2Fg%2F11rwm7l21x?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D">Location</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Path-U</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="#" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
+        </a>
+        <a class="btn btn-sm btn-outline-secondary" href="/STUDENT WEBSITE/Sign in page.html">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+    <div class="nav-scroller py-1 mb-3 border-bottom">
+      <nav class="nav nav-underline justify-content-between">
+        <a class="nav-item nav-link link-body-emphasis" href="#">Home</a>
+        <a class="nav-item nav-link link-body-emphasis" href="/STUDENT WEBSITE/College.html">College</a><!--Shravani-->
+        <a class="nav-item nav-link link-body-emphasis" href="/STUDENT WEBSITE/hostel.html">Hostel</a><!--Pranav-->
+        <a class="nav-item nav-link link-body-emphasis" href="/STUDENT WEBSITE/mayank.html">Libreary</a><!--Mayank-->
+        <a class="nav-item nav-link link-body-emphasis" href="/STUDENT WEBSITE/Tanuja.html">Mess</a><!--Tanuja-->
+        <a class="nav-item nav-link link-body-emphasis" href="/STUDENT WEBSITE/Transport.html">Transport</a><!--Shravani-->
+        <a class="nav-item nav-link link-body-emphasis" href="#">Hospital</a>
+        <a class="nav-item nav-link link-body-emphasis" href="./Pranav.html">Learning</a><!--Pranav-->
+        <a class="nav-item nav-link link-body-emphasis" href="/STUDENT WEBSITE/shravani.html">Travel</a><!--Shravani-->
+      </nav>
+    </div>
+  </div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary ">
+    <div class="col-lg-6 px-0">
+      <h1 class="display-4 fst-italic">Simplifying Student Life in VIT Pune!</h1>
+      <p class="lead my-3">Discover the best hostels and mess facilities in Pune tailored for engineering students. From reviews to recommendations, we make your transition to college life seamless and stress-free!</p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Member 1</strong>
+          <h3 class="mb-0">S.N.Mhetre</h3>
+          <div class="mb-1 text-body-secondary">30 JULY 2006</div>
+          <p class="card-text mb-auto">A first-year engineering student passionate about making life easier for new students transitioning to college.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis">Member 2</strong>
+          <h3 class="mb-0">T.U.Mane</h3>
+          <div class="mb-1 text-body-secondary">26 SEPT 2006</div>
+          <p class="mb-auto">An engineering student focused on using technology to solve problems and guide newcomers in the field.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Member 3</strong>
+          <h3 class="mb-0">P.S.More</h3>
+          <div class="mb-1 text-body-secondary">5 JUNE 2006</div>
+          <p class="card-text mb-auto">Find hostels offering comfortable stays, key amenities, and a supportive environment for students.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis">Member 4</strong>
+          <h3 class="mb-0">M.P.Dhage</h3>
+          <div class="mb-1 text-body-secondary">12 Dec 2006</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">Member 5</strong>
+          <h3 class="mb-0">M.Kalani</h3>
+          <div class="mb-1 text-body-secondary">13 Feb 2006</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success-emphasis">Member 6</strong>
+          <h3 class="mb-0">Mohomad Hani</h3>
+          <div class="mb-1 text-body-secondary">2006</div>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continue reading
+            <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        From the Path-U
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Pune: A Beacon of Learning and Innovation</h2>
+        <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+
+        <p>Known as the "Oxford of the East," Pune is a thriving educational hub, nurturing talent from across the globe. Among its renowned institutions is Vishwakarma Institute of Technology (VIT Pune), a premier engineering college celebrated for its academic excellence and innovative approach to education. With a perfect blend of world-class infrastructure, experienced faculty, and a vibrant campus life, VIT Pune stands as a testament to the city’s rich educational culture, inspiring students to shape a brighter future.</p>
+        <hr>
+        <p>Pune is a city that embodies a philosophy of harmonious coexistence, growth, and progress. Its culture, education, history, population, and people reflect a deep connection to intellectual and social empowerment, a balance between tradition and modernity, and a commitment to collective well-being. Philosophically, Pune can be viewed as a model of how cities can foster personal growth, respect for diversity, and the pursuit of justice, while preserving their rich cultural heritage.</p>
+        <h2>Blockquotes</h2>
+        <p>"Pune is not just a city; it’s an emotion for students—a place where dreams take shape."</p>
+        <blockquote class="blockquote">
+          <p>Pune’s vibrant educational ecosystem is exemplified by institutions like Vishwakarma Institute of Technology (VIT Pune). Known for its academic rigor and state-of-the-art facilities, VIT Pune is a cornerstone of the city’s reputation as the "Oxford of the East."</p>
+        </blockquote>
+        <p>VIT Pune has established itself as one of the leading engineering institutions in Maharashtra and India, known for its high academic standards, modern facilities, and strong industry connections. It offers a holistic educational experience, blending technical skills with personal development, preparing students for successful careers in the fast-evolving global landscape.</p>
+        
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">A New Chapter in Pune</h2>
+        <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
+
+        <p>As a student stepping into Pune, the city opens its doors to endless opportunities, from top-tier educational institutes like VIT Pune to a lively student life filled with new experiences. The blend of modern amenities and historical landmarks creates an environment where you can truly thrive. Whether you’re navigating through its vibrant streets or immersing yourself in academic pursuits, Pune offers the perfect balance of tradition and progress..</p>
+        <blockquote>
+          <strong>Pune isn’t just a city, it’s a place where your dreams take shape.</strong> 
+        </blockquote>
+        <p>In addition to academic growth, Pune offers a dynamic cultural scene and a thriving student community. With countless cafes, events, and places to explore, you’ll never run out of ways to make memories. Embrace every moment, for Pune isn’t just a place to study—it’s a place to grow.</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Welcome to Pune: Your New Beginning!</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+          <p>The website for newcomer students at VIT Pune is designed to provide a comprehensive guide to the city and its resources, ensuring a smooth transition for students. Key features include an interactive map to locate nearby hotels, PG options, libraries, stores, and mess facilities, complete with travel directions and approximate distances. Students can explore user reviews and ratings to choose top-rated accommodations or mess services within their budget using convenient filters. <br><br>
+
+            The site also offers a travel planner for exploring Pune’s iconic spots like Sinhagad Fort and Lonavala, along with a library and study space guide for academic needs. A store locator highlights nearby shops for essentials, while meal subscription plans provide details on affordable dining options. A safety section ensures students have quick access to emergency contacts and tips for staying secure. Additionally, a community forum fosters connections among students, and exclusive discounts on services make settling into Pune even more affordable and enjoyable. With multilingual support, the website caters to the diverse student body, making it a one-stop solution for all their needs.</p>
+
+      </article>
+
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">Our mission is to provide newcomers with everything they need in one place — making your adjustment to Pune seamless, convenient, and enjoyable.</p>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>
+    <h4>Visit Again!!!</h4>
+  </p>
+</footer>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+
+</body>

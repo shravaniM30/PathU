@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Path-U</h1>
+        <p>Sign in by entering your name:</p>
+        <form id="signInForm">
+            <input type="text" id="userName" placeholder="Enter your name" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <h2>Total Visitors: <span id="visitorCount">0</span></h2>
+    </div>
+
+    <script>
+        let visitorCount = localStorage.getItem("visitorCount") || 0;
+
+        // Display initial visitor count
+        document.getElementById("visitorCount").innerText = visitorCount;
+
+        // Handle form submission
+        document.getElementById("signInForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent page reload
+
+            const userName = document.getElementById("userName").value;
+
+            if (userName.trim() !== "") {
+                // Increment visitor count
+                visitorCount++;
+                localStorage.setItem("visitorCount", visitorCount);
+
+                // Display updated count
+                document.getElementById("visitorCount").innerText = visitorCount;
+
+                // Display a welcome message (optional)
+                alert("Welcome, " + userName + "! You are visitor number " + visitorCount);
+
+                // Clear the input field
+                document.getElementById("userName").value = "";
+            } else {
+                alert("Please enter a valid name.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Hub</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #28d3d3, #2a5298);
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Main Section */
+        main {
+            padding-top: 100px; /* Prevent overlap with the header */
+        }
+
+        .intro {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro p {
+            font-size: 1.2em;
+        }
+
+        /* Links Section */
+        .links-group {
+            margin: 60px auto; /* Increased spacing between groups */
+            text-align: center;
+        }
+
+        .links-group h2 {
+            font-size: 1.8em;
+            margin: 40px 0; /* Space above and below the heading */
+        }
+
+        .links-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .link-item {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .link-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Learning Hub</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="intro">
+            <p>
+                Discover the best platforms to enhance your knowledge and skills. From coding tutorials to 
+                full courses, these resources offer something for everyone. Start your journey today!
+            </p>
+        </div>
+
+        <!-- First Group of Links -->
+        <div class="links-group">
+            <h2>Top Learning Platforms</h2>
+            <div class="links-container">
+                <a href="https://www.w3schools.com/" class="link-item"target="_blank">W3Schools</a>
+                <a href="https://www.codecademy.com/" class="link-item"target="_blank">Codecademy</a>
+                <a href="https://www.codewars.com/" class="link-item"target="_blank">Codewars</a>
+                <a href="https://www.freecodecamp.org/" class="link-item"target="_blank">freeCodeCamp</a>
+                <a href="https://code.org/" class="link-item"target="_blank">Code.org</a>
+                <a href="https://www.edx.org/" class="link-item"target="_blank">eDX</a>
+            </div>
+        </div>
+
+        <!-- Second Group of Links -->
+        <div class="links-group">
+            <h2>Additional Resources</h2>
+            <div class="links-container">
+                <a href="https://www.udemy.com/" class="link-item" target="_blank">Udemy</a>
+                <a href="https://www.coursera.org/" class="link-item"target="_blank">Coursera</a>
+                <a href="https://www.pluralsight.com/" class="link-item"target="_blank">Pluralsight</a>
+                <a href="https://www.khanacademy.org/" class="link-item"target="_blank">Khan Academy</a>
+                <a href="https://www.linkedin.com/learning/" class="link-item"target="_blank">LinkedIn Learning</a>
+                <a href="https://www.skillshare.com/" class="link-item"target="_blank">Skillshare</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Learning Hub. All rights reserved. | Designed with 💻 and ❤️</p>
+        
+    </footer>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<head> 
+    <title> Mess</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4>PUNE</h4>
+          <p class="text-body-secondary">Mess facilities in Pune offer homely, affordable meals that cater to diverse tastes, ensuring students and professionals never miss the comfort of a hearty meal. They are a go-to for delicious food on a budget!</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li>Email: tanuja.mane24@vit.edu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>Mess</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Mess (#Foodie) </h1>
+        <p class="lead text-body-secondary">The mess that often comes with cooking and eating represents the chaos of this transition—symbolizing growth, learning, and independence.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\gurukrupa.avif">
+           <div class="card-body">
+              <p class="card-text">Each dish is thoughtfully crafted with quality ingredients and authentic flavours that bring out thr best in every cuisine we serve.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/gurukrupa.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                </div>
+                <small class="text-body-secondary">4.5⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\maheshvari.avif">
+            <div class="card-body">
+              <p class="card-text">If you like homemade food then this is the right place for you,good food at affordable price feels like home food.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/maheshwari.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.2⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\kakunchi-mess.jpg">
+           <div class="card-body">
+              <p class="card-text">For those who appreciate quality food,a warm atmosphere,and attentive service,Kakunchi Mess in kondhwa Khurd,Pune is a must-visit destination.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/kakunchimess.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.1⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\hare-krishna.avif">
+           <div class="card-body">
+              <p class="card-text">Highly appreciated for its tasty and well-prepared meals, especially its vegetarian dishes. Known for its clean environment and prompt, friendly service..</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/harekrushn.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.8⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height=100px" src="c:\Users\Anuja\Pictures\aaradhya mess.jpg">
+           <div class="card-body">
+              <p class="card-text"> Praised for its delicious and affordable meals, offering a variety of flavorful options.  Known for its quick and good service .</p>
+
+
+
+               
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/aaradhya.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.3⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+           <img style="height: 225px;" src="c:\Users\Anuja\Downloads\swami-samarth-mess.avif">
+            <div class="card-body">
+              <p class="card-text"> Known for offering simple, homely, and delicious meals at affordable prices. Customers appreciate the consistency in quality .</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/swami.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.7⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\jay-malhar-mess.jpg">
+            <div class="card-body">
+              <p class="card-text">Jay Malhar Mess is praised for its flavorful and hygienic food, providing a satisfying dining experience. The mess is popular for its variety of dishes and excellent customer service..</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/jaimalhar.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.0⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\khopde mess.jpeg">
+           <div class="card-body">
+              <p class="card-text">Khopde Mess is well-regarded for its authentic, hearty meals and generous portions. Customers often highlight the mess's consistency in taste and the prompt, courteous service..</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/khopde.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.4⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\aai-mess.avif">
+            <div class="card-body">
+              <p class="card-text">Aai Mess is known for its homely, comforting food that reminds patrons of traditional home-cooked meals. The mess is appreciated for its tasty, freshly prepared dishes and warm, friendly atmosphere..</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/aai.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                </div>
+                <small class="text-body-secondary">4.9⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\ajinkya-mess.avif">
+           <div class="card-body">
+              <p class="card-text">Ajinkya Mess is known for its delicious, well-prepared meals and generous portions. Customers appreciate the mess for its affordability, quick service, and consistent quality, making it a popular choice for regular dining.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                 <a href="/STUDENT WEBSITE/Tanuja html files/ajinkya.html">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                 </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.2⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Desktop\sawali mess.jpg">
+            <div class="card-body">
+              <p class="card-text">Sawali Mess is popular for its tasty and comforting meals, offering a variety of flavorful dishes at reasonable prices. Customers appreciate the mess for its clean environment, friendly service, and consistent food quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/sawali.html"></a>
+                  
+                </div>
+                <small class="text-body-secondary">4.8⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\rasmadhuri.avif">
+           <div class="card-body">
+              <p class="card-text">Rasamadhuri Mess is known for its authentic and flavorful South Indian meals, especially its variety of delicious rasam and sambhar dishes. Customers appreciate the mess for its affordable pricing, quick service, and consistent quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/rasamadhuri.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">3.9⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\vithu-mauli-mess.avif">
+           <div class="card-body">
+              <p class="card-text">Vithu Mauli Mess is praised for its flavorful, home-style meals and generous portions. Customers appreciate the mess for its affordability, consistent quality, and friendly, efficient service.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/vithu.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.3⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height=225px" src="c:\Users\Anuja\Downloads\shree-someshwar.jpg">
+           <div class="card-body">
+              <p class="card-text">Someshwar Bhojnalay is praised for its simple, tasty meals that offer great value for money. The mess is appreciated for its homely atmosphere, consistent food quality, and friendly, prompt service It is a popular choice for those seeking authentic, satisfying food in a comfortable setting..</p>
+
+
+
+               
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/someshwar.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                </div>
+                <small class="text-body-secondary">4.5⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+           <img style="height: 225px;" src="c:\Users\Anuja\Desktop\mane mess.jpg">
+            <div class="card-body">
+              <p class="card-text"> Mane Mess is known for its delicious and satisfying meals, often praised for their authentic flavors. The mess is appreciated for its friendly service, clean ambiance, and affordable pricing.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/mane.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.0⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\urvi-mess.webp">
+            <div class="card-body">
+              <p class="card-text">Urvi Mess is appreciated for its tasty and affordable meals, offering a good variety of dishes. Customers often highlight the mess for its prompt service, clean environment, and consistent food quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/urvi.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.8⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\deshpande.avif">
+           <div class="card-body">
+              <p class="card-text">Deshpande Mess is highly praised for its authentic, flavorful meals . The mess is known for its homely atmosphere, affordable pricing, and consistent quality, making it a favorite among patrons.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/deshpande.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.0⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\the-mess-box.jpg">
+            <div class="card-body">
+              <p class="card-text">The Mess Box Mess is appreciated for its variety of tasty, well-prepared meals that offer great value for money. Customers often highlight its clean environment and consistent food quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/messbox.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">5.0⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\darwatkar-mess.webp">
+           <div class="card-body">
+              <p class="card-text">Darwatkar Mess is known for its flavorful, home-cooked meals and generous portions. Customers appreciate the mess for its reasonable prices, consistent quality, and prompt, friendly service.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/darwatkar.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.4⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\jai-ganesh-mess.jpg">
+            <div class="card-body">
+              <p class="card-text">Ganesh Mess is well-regarded for its tasty and hearty meals, offering a great variety of dishes. Customers appreciate the mess for its affordable prices, prompt service, and consistent food quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/jaiganesh.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">5.0⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\shree-padmavati.webp">
+           <div class="card-body">
+              <p class="card-text">Padmavati Mess is praised for its delicious, homemade-style meals that cater to various tastes.  Known for its clean environment, quick service, and reasonable pricing, making it a favorite among locals.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/padmavati.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.6⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\vikas-mess.avif">
+           <div class="card-body">
+              <p class="card-text">Vikas Mess is known for its tasty and filling meals, offering a variety of traditional dishes. Customers appreciate the mess for its affordable prices, friendly atmosphere, and consistent quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/vikas.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.6⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height=225px" src="c:\Users\Anuja\Downloads\annapurna-mess.jpg">
+           <div class="card-body">
+              <p class="card-text"> Annapurna Mess is highly appreciated for its home-style, flavorful meals that are both nutritious and filling. The mess is known for its consistent quality, reasonable prices, and friendly service, making it a popular spot for regular diners.</p>
+
+
+
+               
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/annapurna.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.2⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+           <img style="height: 225px;" src="c:\Users\Anuja\Downloads\trupti-mess.jpg">
+            <div class="card-body">
+              <p class="card-text"> Trupti Mess is praised for its tasty, well-cooked meals and friendly service. It is known for its affordable pricing, clean environment, and consistent food quality that keeps customers coming back.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/trupti.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.4⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\omkar mess.jpg">
+            <div class="card-body">
+              <p class="card-text">Omkar Mess is favored for its simple yet delicious meals, offering a homely dining experience. Customers appreciate the quick service, reasonable prices, and consistent quality of food.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/omkar.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">5.0⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\kulkarni-mess.webp">
+           <div class="card-body">
+              <p class="card-text">Kulkarni Mess is known for its authentic, flavorful dishes that cater to a variety of tastes. The mess is appreciated for its great portion sizes, reasonable prices, and consistent food quality.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/kulkarni.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.1⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <img style="height: 225px;" src="c:\Users\Anuja\Downloads\samruddhi-mess.avif">
+            <div class="card-body">
+              <p class="card-text">Samruddhi Mess is renowned for its delicious and homely meals, offering a variety of options at reasonable prices. Customers appreciate the consistent quality, cleanliness, and friendly service provided.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/STUDENT WEBSITE/Tanuja html files/samruddhi.html">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  </a>
+                  
+                </div>
+                <small class="text-body-secondary">4.4⭐</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="mb-1">
+      <h3>Thank You For Visiting!!!</h3>
+    </p></p>
+  </div>
+</footer>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    
+
+</body>
